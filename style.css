@@ -283,3 +283,17 @@ button:hover {
     padding: 30px;
     margin-top: 80px;
 }
+#hero{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+}
+#skills ul{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+#skills li{
+    text-align:center;
+}
