@@ -410,3 +410,37 @@ button:hover {
         width: 100%;
     }
 }
+
+#formMessage {
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.success-message {
+    color: #15803d;
+}
+
+#scrollTopButton {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #0284c7;
+    color: white;
+    font-size: 24px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#scrollTopButton.show {
+    display: flex;
+}
+
+#scrollTopButton:hover {
+    background-color: #0369a1;
+}
