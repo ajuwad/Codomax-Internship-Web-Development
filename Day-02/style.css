@@ -514,3 +514,32 @@ button:hover {
         grid-template-columns: 1fr;
     }
 }
+/* ===== Experience Section ===== */
+
+#experience{
+    padding:80px 0;
+}
+
+.experience-card{
+    background:#ffffff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+.experience-card h3{
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.experience-card h4{
+    color:#0284c7;
+    margin-bottom:10px;
+}
+
+.experience-card p{
+    line-height:1.8;
+}
+section {
+    scroll-margin-top: 110px;
+}
