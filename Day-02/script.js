@@ -9,14 +9,107 @@ aboutButton.addEventListener("click", function () {
     console.log("Know More About Me button clicked");
 });
 
-// Contact form event and DOM manipulation
+// ==========================
+// DAY 10 - FORM VALIDATION
+// ==========================
+
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const subjectInput = document.getElementById("subject");
+const messageInput = document.getElementById("message");
+
+const nameError = document.getElementById("nameError");
+const emailError = document.getElementById("emailError");
+const subjectError = document.getElementById("subjectError");
+const messageError = document.getElementById("messageError");
+
+function showError(input, errorElement, message) {
+    input.classList.add("input-error");
+    errorElement.textContent = message;
+}
+
+function clearError(input, errorElement) {
+    input.classList.remove("input-error");
+    errorElement.textContent = "";
+}
+
+function isValidEmail(email) {
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return emailPattern.test(email);
+}
+
 contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    formMessage.textContent =
-        "Thank you! Your message has been received successfully.";
+    let formIsValid = true;
 
-    formMessage.classList.add("success-message");
+    const nameValue = nameInput.value.trim();
+    const emailValue = emailInput.value.trim();
+    const subjectValue = subjectInput.value.trim();
+    const messageValue = messageInput.value.trim();
+
+    clearError(nameInput, nameError);
+    clearError(emailInput, emailError);
+    clearError(subjectInput, subjectError);
+    clearError(messageInput, messageError);
+
+    formMessage.textContent = "";
+    formMessage.className = "";
+
+    if (nameValue.length < 3) {
+        showError(
+            nameInput,
+            nameError,
+            "Please enter at least 3 characters."
+        );
+
+        formIsValid = false;
+    }
+
+    if (!isValidEmail(emailValue)) {
+        showError(
+            emailInput,
+            emailError,
+            "Please enter a valid email address."
+        );
+
+        formIsValid = false;
+    }
+
+    if (subjectValue.length < 3) {
+        showError(
+            subjectInput,
+            subjectError,
+            "Please enter a valid subject."
+        );
+
+        formIsValid = false;
+    }
+
+    if (messageValue.length < 10) {
+        showError(
+            messageInput,
+            messageError,
+            "The message must contain at least 10 characters."
+        );
+
+        formIsValid = false;
+    }
+
+    if (!formIsValid) {
+        formMessage.textContent =
+            "Please correct the errors before submitting.";
+
+        formMessage.className = "form-failure";
+        return;
+    }
+
+    formMessage.textContent =
+        "Thank you! Your message has been submitted successfully.";
+
+    formMessage.className = "form-success";
 
     contactForm.reset();
 });
