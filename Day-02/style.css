@@ -692,3 +692,180 @@ section {
         text-align: center;
     }
 }
+/* ==========================
+   DAY 11 - ANIMATIONS
+========================== */
+
+html {
+    scroll-behavior: smooth;
+}
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#hero p:first-child,
+#hero h1,
+#hero h2,
+#hero p,
+#hero a {
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+}
+
+#hero p:first-child {
+    animation-delay: 0.1s;
+}
+
+#hero h1 {
+    animation-delay: 0.25s;
+}
+
+#hero h2 {
+    animation-delay: 0.4s;
+}
+
+#hero p {
+    animation-delay: 0.55s;
+}
+
+#hero a {
+    animation-delay: 0.7s;
+}
+nav a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background-color: #38bdf8;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover,
+nav a.active {
+    color: #38bdf8;
+}
+#hero a,
+.resume-btn,
+.project-button,
+button,
+.social-links a {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#hero a:hover,
+.resume-btn:hover,
+.project-button:hover,
+button:hover,
+.social-links a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(2, 132, 199, 0.22);
+}
+#skills li {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+#skills li:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    background-color: #e0f2fe;
+}
+.project-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.14);
+}
+.experience-card,
+#education,
+.contact-info,
+#contactForm {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.experience-card:hover,
+#education:hover,
+.contact-info:hover,
+#contactForm:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+// ==========================
+// DAY 11 - SCROLL ANIMATIONS
+// ==========================
+
+const animatedSections = document.querySelectorAll(
+    "section, .project-card, .experience-card"
+);
+
+const revealObserver = new IntersectionObserver(
+    function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("reveal-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+animatedSections.forEach(function (element) {
+    element.classList.add("reveal-hidden");
+    revealObserver.observe(element);
+});
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -157,3 +157,5 @@ window.addEventListener("scroll", function () {
         }
     });
 });
+const animatedSections = document.querySelectorAll(...);
+...
