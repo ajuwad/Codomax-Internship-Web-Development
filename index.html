@@ -18,10 +18,12 @@
 
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#hero">Hero</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#resume">Resume</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -41,7 +43,7 @@
                 digital projects.
             </p>
 
-            <a href="#about">Know More About Me</a>
+            <a href="#about" id="aboutButton">Know More About Me</a>
         </section>
 
         <!-- About Section -->
@@ -64,14 +66,40 @@
     <h2>Skills</h2>
 
     <ul>
-        <li>HTML5</li>
-        <li>CSS3 (Learning)</li>
-        <li>JavaScript (Learning)</li>
-        <li>Git & GitHub</li>
-        <li>UI/UX Design</li>
-        <li>Cybersecurity</li>
+       <ul>
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>JavaScript</li>
+    <li>Responsive Design</li>
+    <li>Flexbox</li>
+    <li>CSS Grid</li>
+    <li>Git & GitHub</li>
+    <li>Python</li>
+    <li>C Programming</li>
+</ul>
     </ul>
+<section id="experience">
 
+    <h2>Experience</h2>
+
+    <div class="experience-card">
+
+        <h3>Web Development Intern</h3>
+
+        <h4>Codomax Digital Solutions</h4>
+
+        <p><strong>Duration:</strong> July 2026 – Present</p>
+
+        <p>
+            Currently undergoing a Web Development Internship where I am
+            learning and implementing HTML, CSS, JavaScript, Responsive Web Design,
+            Flexbox, CSS Grid, Git, GitHub, and portfolio development through
+            daily hands-on tasks and real-world projects.
+        </p>
+
+    </div>
+
+</section>
 </section>
 <section id="education">
 
@@ -92,27 +120,193 @@
     </p>
 
 </section>
-<section id="contact">
+<section id="projects">
+    <h2>Projects</h2>
 
-    <h2>Contact Me</h2>
+    <div class="projects-grid">
 
-    <form>
+        <article class="project-card">
+            <h3>Fake News Detection Website</h3>
 
-        <label>Name</label><br>
-        <input type="text" placeholder="Enter your name"><br><br>
+            <p>
+                A web-based project that checks news content and helps identify
+                whether the information may be real or fake.
+            </p>
 
-        <label>Email</label><br>
-        <input type="email" placeholder="Enter your email"><br><br>
+            <p class="project-tools">
+                HTML • CSS • JavaScript • Python • Flask
+            </p>
 
-        <label>Message</label><br>
-        <textarea rows="5" cols="40" placeholder="Write your message"></textarea><br><br>
+            <a href="#" class="project-button">View Project</a>
+        </article>
 
-        <button type="submit">Send Message</button>
+        <article class="project-card">
+            <h3>Personal Portfolio Website</h3>
 
-    </form>
+            <p>
+                A responsive personal portfolio created to showcase my skills,
+                education, projects and contact information.
+            </p>
+
+            <p class="project-tools">
+                HTML • CSS • JavaScript
+            </p>
+
+            <a href="#" class="project-button">View Project</a>
+        </article>
+
+        <article class="project-card">
+            <h3>Healthcare Assistant</h3>
+
+            <p>
+                A proposed healthcare support system that helps patients manage
+                reports, medicine reminders, appointments and lifestyle guidance.
+            </p>
+
+            <p class="project-tools">
+                Web Development • AI • Healthcare
+            </p>
+
+            <a href="#" class="project-button">View Project</a>
+        </article>
+
+    </div>
+</section>
+<section id="resume">
+
+    <h2>Resume</h2>
+
+    <p>
+        Download my latest resume to know more about my education,
+        technical skills and projects.
+    </p>
+
+    <a href="resume.pdf.pdf" download class="resume-btn">
+        Download Resume
+    </a>
 
 </section>
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <p class="contact-intro">
+        Have a project idea, internship opportunity, or collaboration in mind?
+        Feel free to contact me.
+    </p>
+
+    <div class="contact-container">
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+
+            <h3>Let's Connect</h3>
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:ajuwad7700@gmail.com">
+                    ajuwad7700@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                <a href="tel:+917907050138">
+                    +91 7907050138
+                </a>
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Palakkad, Kerala, India
+            </p>
+
+            <div class="social-links">
+                <a
+                    href="https://github.com/ajuwad"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/ajuwad-b-643949346/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contactForm" novalidate>
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                >
+
+                <small class="error-message" id="nameError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                >
+
+                <small class="error-message" id="emailError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Enter the subject"
+                >
+
+                <small class="error-message" id="subjectError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Write your message"
+                ></textarea>
+
+                <small class="error-message" id="messageError"></small>
+            </div>
+
+            <button type="submit">Send Message</button>
+
+            <p id="formMessage"></p>
+
+        </form>
+
+    </div>
+</section>
     </main>
+
+    <button id="scrollTopButton" title="Go to top">↑</button>
+    
 <footer>
 
     <hr>
@@ -120,6 +314,6 @@
     <p>© 2026 Ajuwad B. All Rights Reserved.</p>
 
 </footer>
+<script src="script.js"></script>
 </body>
-
 </html>
